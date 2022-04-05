@@ -1,5 +1,5 @@
 {
-  "name": "d3-format",
+  "name": "@salvoravida/d3-format",
   "version": "3.1.0",
   "description": "Format numbers for human consumption.",
   "homepage": "https://d3js.org/d3-format/",
@@ -25,7 +25,7 @@
     "locale/*.json"
   ],
   "module": "src/index.js",
-  "main": "src/index.js",
+  "main": "dist/d3-format.min.js",
   "jsdelivr": "dist/d3-format.min.js",
   "unpkg": "dist/d3-format.min.js",
   "exports": {
@@ -46,8 +46,7 @@
   },
   "scripts": {
     "test": "mocha 'test/**/*-test.js' && eslint src test",
-    "prepublishOnly": "rm -rf dist && yarn test && rollup -c",
-    "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+    "prepublishOnly": "rm -rf dist && yarn test && rollup -c"
   },
   "engines": {
     "node": ">=12"
